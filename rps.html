@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1.0">
+ <title>RPS</title>
+
+</head>
+<body>
+ <script>
+
+let y = 0;
+let z = 0;
+
+     function computerPlay(){
+        let randomSelection = ['Rock', 'Paper', 'Scissors']
+        let selectedNum = Math.floor(Math.random() * 3) + 0;
+        let computerSelection = randomSelection[selectedNum]
+        return computerSelection
+     }
+
+     function game(){
+
+
+    for(let i = 0; y < 3 && z < 3; i++){
+        playGame()
+        if(y == 3){
+            alert('!!!!!!Player Wins!!!!!!!!!!!')
+        } else if (z == 3){
+            alert('!!!!!Computer Wins!!!!!')
+        }
+    }}
+
+     function playGame(playerChoice, computerChoice){
+         console.log('should be getting prompted')
+        playerChoice = prompt('Enter, Rock, Paper or Scissors')
+        computerChoice = computerPlay()
+        console.log(playerChoice, computerChoice)
+        if(playerChoice.toUpperCase() == computerChoice.toUpperCase()){
+            alert('Draw')
+        } else if (playerChoice.toUpperCase() == 'ROCK' && computerChoice.toUpperCase() == 'PAPER'){
+            alert('Computer wins')
+            z++
+            console.log(`z = ${z}`)
+        } else if (playerChoice.toUpperCase() == 'ROCK' && computerChoice.toUpperCase() == 'SCISSORS'){
+            alert('Player wins')
+            y++
+            console.log(`y = ${y}`)
+        } else if (playerChoice.toUpperCase() == 'PAPER' && computerChoice.toUpperCase() == 'ROCK'){
+            alert('Player wins')
+            y++
+            console.log(`z = ${z}`)
+        } else if (playerChoice.toUpperCase() == 'PAPER' && computerChoice.toUpperCase() == 'SCISSORS'){
+            alert('Computer wins')
+            z++
+            console.log(`y = ${y}`)
+        } else if (playerChoice.toUpperCase() == 'SCISSORS' && computerChoice.toUpperCase() == 'ROCK'){
+            alert('Computer wins')
+            z++
+            console.log(`z = ${z}`)
+        } else if (playerChoice.toUpperCase() == 'SCISSORS' && computerChoice.toUpperCase() == 'PAPER'){
+            alert('Player wins')
+            y++
+            console.log(`y = ${y}`)
+        }
+    }
+
+
+
+     game()
+
+
+ </script>
+</body>
+</html>
